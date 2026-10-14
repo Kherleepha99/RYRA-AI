@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101629">
+  <title>RYRA AI — Voice Assistant</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><div class="brand-mark">R</div><div><strong>RYRA AI</strong><small>Voice assistant</small></div></div>
+      <button class="new-chat" id="newChat">＋ New conversation</button>
+      <div class="side-label">QUICK ACTIONS</div>
+      <button class="side-action" data-action="dial">☎ <span>Open phone dialer</span></button>
+      <button class="side-action" data-action="whatsapp">◉ <span>Open WhatsApp</span></button>
+      <button class="side-action" data-action="facebook">f <span>Open Facebook</span></button>
+      <button class="side-action" data-action="youtube">▶ <span>Open YouTube</span></button>
+      <div class="sidebar-note"><span class="online-dot"></span> Online AI mode</div>
+      <div class="sidebar-footer">Hausa • English<br><span>Privacy-first starter</span></div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="mobile-brand"><div class="brand-mark">R</div><strong>RYRA AI</strong></div>
+        <div class="status-pill"><span class="online-dot"></span> Assistant ready</div>
+        <label class="language-label" for="language">Language</label>
+        <select id="language" aria-label="Choose language"><option value="ha">Hausa</option><option value="en">English</option></select>
+      </header>
+
+      <section class="welcome" id="welcome">
+        <div class="orb-wrap"><div class="orb"><span></span><span></span><span></span></div></div>
+        <div class="eyebrow">YOUR VOICE. YOUR ASSISTANT.</div>
+        <h1>Hi, I'm <span>RYRA.</span></h1>
+        <p id="welcomeText">Talk to me in Hausa or English. Ask a question or try a quick action.</p>
+        <div class="suggestions">
+          <button class="suggestion" data-prompt="Ka gaishe ni da Hausa"> <b>✦</b><span><strong>Yi magana da Hausa</strong><small>Chat naturally in Hausa</small></span><i>↗</i></button>
+          <button class="suggestion" data-prompt="Explain artificial intelligence in simple English"> <b>⌘</b><span><strong>Learn something</strong><small>Ask a question</small></span><i>↗</i></button>
+          <button class="suggestion" data-prompt="Help me plan my day"> <b>◷</b><span><strong>Plan my day</strong><small>Make a simple plan</small></span><i>↗</i></button>
+        </div>
+      </section>
+
+      <section class="conversation hidden" id="conversation" aria-live="polite"></section>
+
+      <div class="composer-wrap">
+        <div class="listening-banner hidden" id="listeningBanner"><span class="pulse"></span><span id="listeningText">Listening…</span><button id="cancelListen" aria-label="Cancel listening">×</button></div>
+        <form class="composer" id="chatForm">
+          <button class="mic-button" type="button" id="micButton" title="Start voice assistant" aria-label="Start voice assistant">🎙</button>
+          <textarea id="messageInput" rows="1" placeholder="Message RYRA or tap the microphone…" aria-label="Message RYRA"></textarea>
+          <button class="send-button" id="sendButton" type="submit" aria-label="Send message">↑</button>
+        </form>
+        <div class="composer-hint">Tap the microphone once to grant access, then say “Hey RYRA”. Keep this tab open.</div>
+      </div>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="/app.js"></script>
+</body>
+</html>
